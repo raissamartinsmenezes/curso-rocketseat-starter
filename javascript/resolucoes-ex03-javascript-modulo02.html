@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Módulo 02</title>
+</head>
+<body>
+    
+    <div class="app">
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+    </div>
+    
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"]
+        let app = document.querySelector('div.app')
+        let lista = document.createElement('ul')
+        
+        let inputElement = document.querySelector('input[name=nome]')
+        console.log(inputElement)
+        let buttonElement = document.querySelector('button')
+        console.log(buttonElement)
+        
+        function adicionar(){
+            let inputValue = inputElement.value
+            nomes.push(inputValue)
+            console.log(nomes)
+            // inputValue = " " 
+        }
+        
+        for(let nome of nomes){
+            let itemLista = document.createElement('li')
+            textNome = document.createTextNode(nome)
+            itemLista.appendChild(textNome)
+            lista.appendChild(itemLista)
+        }
+        app.appendChild(lista)
+        
+    </script>
+</body>
+</html>

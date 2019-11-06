@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Módulo 02</title>
+</head>
+<body>
+    <div class="app">
+
+    </div>
+    
+    <script>
+        let app = document.querySelector('div.app')
+        // console.log(app)
+        let btn = document.createElement('button')
+        app.appendChild(btn)
+        let text = document.createTextNode('Botão')
+        btn.appendChild(text)
+        let square = document.createElement('div')
+        
+        btn.onclick = function() {
+            // alert('Botão clicado')
+            square.style.width = '100px';
+            square.style.height = '100px';
+            square.style.backgroundColor = '#000';
+            square.style.margin = '10px';
+            // console.log(app)
+            app.appendChild(square)
+            // console.log(square)
+        }     
+        
+        square.onmouseover = function () {
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            let newColor = getRandomColor();
+            square.style.backgroundColor = newColor
+        }
+        
+    </script>
+</body>
+</html>
